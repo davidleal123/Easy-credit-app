@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Vistas.Fragmentos.Perfil">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/perfil_imgv_user"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_usuario"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/perfil_txt_nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre del usuario"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="36sp"
+            android:layout_marginTop="12dp"
+            android:layout_below="@id/perfil_imgv_user"
+            />
+
+        <TextView
+            android:id="@+id/perfil_txt_solicitudes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Solicitudes:"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/perfil_txt_nombre"
+            />
+
+        <LinearLayout
+            android:id="@+id/perfil_lyt_lista"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/perfil_txt_solicitudes"
+            >
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/perfil_swipe_solicitudes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/perfil_txt_solicitudes">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/perfil_rcv_solicitudes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                </android.support.v7.widget.RecyclerView>
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+            <ImageView
+                android:id="@+id/perfil_imgv_nosolicitudes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_sin_solicitudes"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+    </RelativeLayout>
+
+</FrameLayout>

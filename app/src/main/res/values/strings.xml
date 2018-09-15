@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">EasyCredit</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="usuario">Usuario</string>
+    <string name="IniciarSesion">Iniciar Sesión</string>
+    <string name="Vacios">No puede tener espacios vacios</string>
+    <string name="IntenteNuevo">Intente de nuevo</string>
+    <string name="menu">MENÚ</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="historial">Historial</string>
+    <string name="solicitiudes">Solicitiudes</string>
+    <string name="perfil">Perfil</string>
+    <string name="pendiente">Pendiente</string>
+    <string name="Aprobado">Aprobado</string>
+    <string name="NoAprobado">No aprobado</string>
+    <string name="TarjetaCredito">Tengo tarjeta de credito</string>
+    <string name="edad">Edad</string>
+    <string name="monto">Monto</string>
+    <string name="solicitar_credito">Solicitar Credito</string>
+    <string name="nuevoIntento">Intente de nuevo</string>
+    <string name="selecciona_tu_plazo">Selecciona tu plazo</string>
+</resources>

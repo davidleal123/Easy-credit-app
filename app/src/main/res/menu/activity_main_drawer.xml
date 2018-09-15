@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <item android:title="@string/menu">
+        <menu>
+            <item
+                android:id="@+id/nav_historial"
+                android:icon="@drawable/ic_historial_transparente"
+                android:title="@string/historial"
+                />
+            <item
+                android:id="@+id/nav_solicitudes"
+                android:icon="@drawable/ic_solicitudes_transparente"
+                android:title="@string/solicitiudes" />
+            <item
+                android:id="@+id/nav_perfil"
+                android:icon="@drawable/ic_usuario"
+                android:title="@string/perfil" />
+        </menu>
+    </item>
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_apargar_transparent"
+            android:title="@string/logout"
+            />
+</menu>

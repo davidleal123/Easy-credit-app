@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00c853</color>
+    <color name="colorPrimaryDark">#009624</color>
+    <color name="colorPrimaryLight">#5efc82</color>
+    <color name="colorAccent">#009624</color>
+
+    <color name="colorPrimaryRed">#FF2D00</color>
+    <color name="colorPrimaryRedDark">#641E16</color>
+    <color name="colorTextPrimary">#000000</color>
+    <color name="colorTextSecundary">#afafaf</color>
+    <color name="colorTextTertiary">#646464</color>
+
+    <color name="bannerPendiente">#005DFF</color>
+    <color name="bannerAceptado">#49FF00</color>
+    <color name="bannerCancelado">#FF0000</color>
+
+    <color name="colorWhite">#FFF</color>
+
+
+    <color name="transparent">#00ff0000</color>
+
+</resources>
