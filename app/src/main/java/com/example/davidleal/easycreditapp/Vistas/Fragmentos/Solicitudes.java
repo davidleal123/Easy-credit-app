@@ -65,6 +65,12 @@ public class Solicitudes extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        cargarSolicitudes();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -127,7 +133,8 @@ public class Solicitudes extends Fragment {
             mSwipeRefreshLayout.setVisibility(View.GONE);
         }else {
             nosolicitudes.setVisibility(View.GONE);
-            mSwipeRefreshLayout.setVisibility(View.VISIBLE);            mAdapter = new HistorialAdapter(list);
+            mSwipeRefreshLayout.setVisibility(View.VISIBLE);
+            mAdapter = new HistorialAdapter(list);
             historial.setAdapter(mAdapter);
 
             ItemClickSupport.addTo(historial).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
@@ -135,7 +142,17 @@ public class Solicitudes extends Fragment {
                 public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                     com.example.davidleal.easycreditapp.Modelos.Solicitudes solicitud = list.get(position);
                     Intent intent = new Intent(getActivity(), DetalleSolicitud.class);
+                    intent.putExtra("titulo","DetalleSolicitud");
+                    intent.putExtra("estatus",solicitud.getEstatus());
                     intent.putExtra("idsolicitud",solicitud.getIdsolicitud());
+                    intent.putExtra("interes",solicitud.getInteres());
+                    intent.putExtra("fechaAclaracion",solicitud.getFechaAclaracion());
+                    intent.putExtra("fechaSolicitud",solicitud.getFechaSolicitud());
+                    intent.putExtra("plazo",solicitud.getPlazo());
+                    intent.putExtra("cantidad",solicitud.getCantidad());
+                    intent.putExtra("iduser",solicitud.getUserid());
+
+
                     startActivity(intent);
                 }
             });

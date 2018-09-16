@@ -114,19 +114,19 @@ public class MainActivity extends BaseActivity
             // Handle the camera action
             fragment = new Historial();
             title = "Historial";
+            cambiarFragmento(fragment,title);
         } else if (id == R.id.nav_solicitudes) {
             fragment = new Solicitudes();
             title = "Solicitudes";
-
+            cambiarFragmento(fragment,title);
         } else if (id == R.id.nav_perfil) {
             fragment = new Perfil();
             title = "Perfil";
-
+            cambiarFragmento(fragment,title);
         } else if (id == R.id.nav_logout) {
             //CerrarSesion
             cerrarSesion();
         }
-        cambiarFragmento(fragment,title);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

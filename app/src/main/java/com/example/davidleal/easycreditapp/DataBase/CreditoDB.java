@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.davidleal.easycreditapp.Modelos.SolicitudAdmin;
 import com.example.davidleal.easycreditapp.Modelos.Solicitudes;
 import com.example.davidleal.easycreditapp.Modelos.Usuario;
 
@@ -34,7 +35,7 @@ public class CreditoDB extends SQLiteOpenHelper {
         );
         db.execSQL(
                 "create table SolicitudCredito " +
-                        "(idsolicitud INTEGER primary key AUTOINCREMENT, Estado int, idUser int,Cantidad int,Interes double, Plazo int, FechaSolicitud text, FechaAclaracion)"
+                        "(idsolicitud INTEGER primary key AUTOINCREMENT, Estado int, idUser int,Cantidad int,Interes double, Plazo int, FechaSolicitud text, FechaAclaracion,FOREIGN KEY(idUser) REFERENCES Usuarios(idusuario))"
         );
         db.execSQL(
                 "create table Sesion " +
@@ -225,5 +226,71 @@ public class CreditoDB extends SQLiteOpenHelper {
 
         db.update(Solicitud_TABLE_NAME, contentValues, "idsolicitud = ? ", new String[] { solicitud.getIdsolicitud()+"" } );
         return true;
+    }
+
+
+    public List<SolicitudAdmin> SolicitudesAdmin() {
+        List<SolicitudAdmin> array_list = new ArrayList();
+        SolicitudAdmin solicitud = new SolicitudAdmin();
+
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "select * from " + Solicitud_TABLE_NAME + " INNER JOIN "+Usuario_TABLE_NAME +
+                " ON SolicitudCredito.idUser = Usuarios.idusuario "+
+                " where SolicitudCredito.Estado = 0";
+        try {
+            Cursor res = db.rawQuery(query, null);
+            res.moveToFirst();
+            while (!res.isAfterLast()) {
+                solicitud = new SolicitudAdmin();
+                solicitud.setIdsolicitud(res.getInt(0));
+                solicitud.setEstatus(res.getInt(1));
+                solicitud.setUserid(res.getInt(2));
+                solicitud.setCantidad(res.getInt(3));
+                solicitud.setInteres(res.getInt(4));
+                solicitud.setPlazo(res.getInt(5));
+                solicitud.setFechaSolicitud(res.getString(6));
+                solicitud.setFechaAclaracion(res.getString(7));
+                solicitud.setUserid(res.getInt(8));
+                solicitud.setUsuario(res.getString(9));
+
+                array_list.add(solicitud);
+                res.moveToNext();
+            }
+        }
+        catch(SQLiteException e) { }
+        return array_list;
+    }
+    public List<SolicitudAdmin> SolicitudesAdmin(int userid) {
+        List<SolicitudAdmin> array_list = new ArrayList();
+        SolicitudAdmin solicitud = new SolicitudAdmin();
+
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "select * from " + Solicitud_TABLE_NAME + " INNER JOIN "+Usuario_TABLE_NAME +
+                " ON SolicitudCredito.idUser = Usuarios.idusuario "+
+                " where Estado = 0 and idUser = "+ userid;
+        try {
+            Cursor res = db.rawQuery(query, null);
+            res.moveToFirst();
+            while (!res.isAfterLast()) {
+                solicitud = new SolicitudAdmin();
+                solicitud.setIdsolicitud(res.getInt(0));
+                solicitud.setEstatus(res.getInt(1));
+                solicitud.setUserid(res.getInt(2));
+                solicitud.setCantidad(res.getInt(3));
+                solicitud.setInteres(res.getInt(4));
+                solicitud.setPlazo(res.getInt(5));
+                solicitud.setFechaSolicitud(res.getString(6));
+                solicitud.setFechaAclaracion(res.getString(7));
+                solicitud.setUserid(res.getInt(8));
+                solicitud.setUsuario(res.getString(9));
+
+                array_list.add(solicitud);
+                res.moveToNext();
+            }
+        }
+        catch(SQLiteException e) { }
+        return array_list;
     }
 }

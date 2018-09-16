@@ -44,15 +44,25 @@ public class Login extends BaseActivity implements ILoginView {
     @OnClick(R.id.login_btn_login)
     void loginClick(){
         if(hasValidation()){
-            Usuario user = new Usuario();
-            user.setNombre(usuariotxt.getText().toString());
-            user= mydb.login(user);
+            if(usuariotxt.getText().toString().equals("ADMINISTRADOR")){
+                preferences.getInstance().setUSerId("0");
+                preferences.getInstance().setUser("ADMINISTRADOR");
+                Intent intent = new Intent(this, Administrador.class);
+                startActivity(intent);
+            }else{
+                Usuario user = new Usuario();
+                user.setNombre(usuariotxt.getText().toString());
+                user= mydb.login(user);
 
-            preferences.getInstance().setUSerId(user.getUserid()+"");
-            preferences.getInstance().setUser(user.getNombre());
+                preferences.getInstance().setUSerId(user.getUserid()+"");
+                preferences.getInstance().setUser(user.getNombre());
 
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                this.finish();
+            }
+
+
         }else {
             mostrarMensajeError(getString(R.string.IntenteNuevo));
         }

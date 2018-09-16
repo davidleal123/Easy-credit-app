@@ -136,7 +136,15 @@ public class Historial extends Fragment {
                 public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                     Solicitudes solicitud = list.get(position);
                     Intent intent = new Intent(getActivity(), DetalleSolicitud.class);
+                    intent.putExtra("titulo","Detalle Historial");
+                    intent.putExtra("estatus",solicitud.getEstatus());
                     intent.putExtra("idsolicitud",solicitud.getIdsolicitud());
+                    intent.putExtra("interes",solicitud.getInteres());
+                    intent.putExtra("fechaAclaracion",solicitud.getFechaAclaracion());
+                    intent.putExtra("fechaSolicitud",solicitud.getFechaSolicitud());
+                    intent.putExtra("plazo",solicitud.getPlazo());
+                    intent.putExtra("cantidad",solicitud.getCantidad());
+                    intent.putExtra("iduser",solicitud.getUserid());
                     startActivity(intent);
                 }
             });

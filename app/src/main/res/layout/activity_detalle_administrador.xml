@@ -1,9 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Vistas.Actividades.DetalleAdministrador">
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/admindetalle_txt_titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="Detalle de Solicitud"
+                android:textColor="@color/cardview_dark_background"
+                android:textSize="30sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/admindetalle_txt_usermod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Usuario:"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/admindetalle_txt_montomod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Monto:"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/admindetalle_txt_plazomod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Plazo:"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/admindetalle_txt_interesmod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Interes:"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/admindetalle_txt_fechasolmod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Fecha Solicitud:"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/admindetalle_txt_estadomod"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Estado:"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/admindetalle_txt_user"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Usuario:"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/admindetalle_txt_monto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Monto:"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/admindetalle_txt_plazo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Plazo:"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/admindetalle_txt_interes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Monto Con interes:"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/admindetalle_txt_fechasol"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Fecha Solicitud:"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="22sp" />
+
+
+
+                    <TextView
+                        android:id="@+id/admindetalle_txt_estado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="Estado:"
+                        android:textColor="@color/cardview_dark_background"
+                        android:textSize="22sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40sp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/admindetalle_lyt_cancelar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_cancelar" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="CANCELAR"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/admindetalle_lyt_aceptar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_aceptar" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="ACEPTAR"
+                        android:textColor="@color/colorTextPrimary"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

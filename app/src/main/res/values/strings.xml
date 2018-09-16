@@ -27,4 +27,5 @@
     <string name="solicitar_credito">Solicitar Credito</string>
     <string name="nuevoIntento">Intente de nuevo</string>
     <string name="selecciona_tu_plazo">Selecciona tu plazo</string>
+    <string name="solicitudes_totales">Solicitudes Totales</string>
 </resources>
